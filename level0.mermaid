@@ -1,0 +1,13 @@
+graph TD
+    A[Sensors] -->|Raw Sensor Data| B(Navigation Processing);
+    B -->|Estimated State| C(Guidance Computation);
+    C -->|Control Commands| D(Control Processing);
+    D -->|Actuators Commands| E[Actuators];
+    E -->|Rocket Movement| A;
+    F[Ground Control] -->|Mission Parameters| C;
+    B -->|Navigation Data| F;
+    C -->|Trajectory Data| F;
+    G[Navigation Satellites] -->|GNSS Signals| B;
+    H[Celestial Objects] -->|Star Positions| B;
+    I[Environment] -->|Atmospheric Data| B;
+    J[Trajectory Planning] -->|Planned Trajectory| C;
