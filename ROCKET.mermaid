@@ -1,0 +1,17 @@
+``` mermaid
+graph TD;
+    A[Rocket Guidance and Navigation Control System] -->|Sensor Data| B(Sensors);
+    B --> A;
+    A -->|Control Commands| C(Actuators);
+    C --> A;
+    A -->|Telemetry Data| D(Ground Control);
+    D -->|Mission Parameters| A;
+    A -->|Navigation Data| E(Navigation Satellites);
+    E -->|GNSS Signals| A;
+    A -->|Celestial Data| F(Celestial Objects);
+    F -->|Star Positions| A;
+    A -->|Environmental Data| G(Environment);
+    G -->|Atmospheric Data| A;
+    A -->|Trajectory Data| H(Trajectory Planning);
+    H -->|Planned Trajectory| A;
+```
