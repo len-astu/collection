@@ -21,7 +21,7 @@ graph TD
     SENS -- Sensor Data --> GNC;
     GND -- "Mission Plan / Target Data (Pre-Launch)" --> GNC;
     GND -- "Telecommands (Optional, In-Flight)" --> COMM;
-    COMM -- Telecommands --> GNC
+    COMM -- Telecommands --> GNC;
     PWR -- Electrical Power --> GNC;
 
     %% Outputs from GNC
@@ -35,6 +35,9 @@ graph TD
     ACT -- "Control Forces/Moments" --> STRUCT;
     ENV -- "Aerodynamic Forces/Moments, Pressure" --> STRUCT;
     GRAV -- Gravitational Force --> STRUCT;
-    STRUCT -- "Motion/State" --> SENS; %% How sensors perceive motion
-    STRUCT -- Physical Constraints --> ACT; %% Limits movement
-    STRUCT -- Physical Constraints --> PROP; %% Mounting
+    %% How sensors perceive motion
+    STRUCT -- "Motion/State" --> SENS;
+    %% Limits movement
+    STRUCT -- Physical Constraints --> ACT;
+    %% Mounting
+    STRUCT -- Physical Constraints --> PROP;
